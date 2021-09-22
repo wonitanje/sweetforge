@@ -1,0 +1,138 @@
+.order {
+  padding: 30px 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-gap: 30px;
+    width: 100%;
+    height: auto;
+  }
+
+  &__block {
+    border: 2px var(--separator) solid;
+    border-radius: 3px;
+    // background-color: var(--primary-lite);
+  }
+
+  &__left {
+    display: inline;
+    flex: 0 0 300px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__right {
+    flex: 1 0 424px;
+    max-width: 100%;
+  }
+
+  &__package {
+    padding: 10px;
+    position: sticky;
+    top: 0;
+
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__info {
+    padding: 10px 15px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    grid-gap: 10px;
+
+    &-left {
+      flex: 1 1 auto;
+    }
+
+    &-right {
+      padding: 8px 13px;
+      justify-self: flex-end;
+      border-radius: 3px;
+      border: 2px var(--primary) solid;
+      text-shadow: 0 0 30px var(--primary);
+    }
+  }
+
+  &__structure {
+    margin: 30px 0 0;
+    padding: 10px 0 0;
+
+    & > .title {
+      padding: 0 15px 15px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    & > p {
+      padding: 10px 4px;
+      flex: 0 0 32px;
+      text-align: center;
+    }
+
+    &.mask {
+      color: #212121;
+      background-color: var(--primary-lite);
+
+      & > p {
+        padding: 2px 4px;
+      }
+    }
+    
+    &:nth-child(odd) {
+      background-color: var(--primary);
+    }
+
+    .counter {
+      text-align: right;
+    }
+
+    .name {
+      flex: 1 1 auto;
+      text-align: left;
+    }
+  }
+
+  &__btns {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__btn {
+    padding: 7px 12px;
+    color: #212121;
+    border-radius: 3px;
+    border: 1px var(--primary) outset;
+    background-color: var(--primary-lite);
+    font-size: 18px;
+    transition: .5s;
+
+    &:active {
+      border-style: inset;
+    }
+
+    &:nth-child(1) {
+      color: #fff;
+      background-color: var(--secondary);
+    }
+
+    &:hover {
+      color: #212121;
+      background-color: var(--primary);
+    }
+  }
+}

@@ -1,0 +1,90 @@
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Fredoka+One&family=Roboto&display=swap');
+
+// Functions
+@function HexToRGB($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+
+@function cl($name) {
+  @return HexToRGB(var(#{$name}));
+}
+
+// Var
+$maxWidth: 1920;
+$mobWidth: 768;
+$maxHeight: 1080;
+
+$orange: #f38181;
+$orange-lite: #f3b581;
+$black: #111;
+$blackyblue: #2c3e50;
+$white: #fff;
+$aquamarine: #19ffc9;
+$blue: #001EFF;
+$blue: #86ccf8;
+$purple: #8896d8;
+$pink: #c3679b;
+$vinous: #96299b;
+$red-crimson: #9e2a2a;
+$red: #f01818;
+$grey: #d8d8d8;
+$grey-lite: #e8e8e8;
+$green: #12e12d;
+$green-dark: #82ae24;
+
+:root {
+  --h_header: 130px;
+
+  --z-menu: 1;
+  --z-header: calc(var(--z-menu) + 1);
+  --z-preview: calc(var(--z-header) + 1);
+  --z-modal: calc(var(--z-preview) + 1);
+
+  --maxWidth: 1920px;
+  --mobWidth: 768px;
+  --maxHeight: 1080px;
+
+  --orange: #f38181;
+  --orange-lite: #f3b581;
+  --black: #111;
+  --blackyblue: #2c3e50;
+  --white: #fff;
+  --aquamarine: #19ffc9;
+  --blue: #001EFF;
+  --blue: #86ccf8;
+  --purple: #8896d8;
+  --pink: #c3679b;
+  --vinous: #96299b;
+  --red-crimson: #9e2a2a;
+  --red: #f01818;
+  --grey: #d8d8d8;
+  --grey-lite: #e8e8e8;
+  --green: #12e12d;
+  --green-dark: #82ae24;
+}
+
+
+// Mixins
+@mixin adaptiv-font($pcSize, $mobSize, $minWidth) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - $minWidth;
+  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$maxWidth}));
+}
+
+@mixin adaptiv-font-mobile($pcSize, $mobSize, $minWidth) {
+  $addSize: $pcSize - $mobSize;
+  $mobWidth: $mobWidth - $minWidth;
+  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$mobWidth}));
+}
+
+@mixin font($font_name, $file_name, $weight, $style) {
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url("../fonts/#{$file_name}.woff") format("woff"),
+    url("../fonts/#{$file_name}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}

@@ -1,0 +1,29 @@
+.main {
+  display: flex;
+  flex-flow: row wrap;
+  flex: 1 1 auto;
+  // min-height: calc(100% - var(--h-navbar));
+  background-color: var(--primary-lite);
+
+  .title {
+    padding: 25px 25px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--white);
+  }
+
+  .block {
+    height: 100%;
+    flex: 0 1 400px;
+  }
+
+  .block_1 {
+    background-color: #432;
+  }
+  .block_2 {
+    flex: 1 1 auto;
+    background-color: #8f72a4;
+  }
+}

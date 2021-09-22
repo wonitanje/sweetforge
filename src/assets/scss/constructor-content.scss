@@ -1,0 +1,15 @@
+.attachment {
+  &__item {
+    padding: 0 0 10px 0;
+    justify-content: space-between;
+    height: 290px;
+  }
+
+  &__name {
+    flex: 0 0 0;
+  }
+
+  &__price {
+    text-align: center;
+  }
+}
