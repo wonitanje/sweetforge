@@ -12,11 +12,10 @@
       <content-steps />
 
       <div
-        @click.self="toggleAction"
         :class="{ active: action_active }"
         class="block action"
       >
-        <p class="head">Действие</p>
+        <p @click.stop="toggleAction" class="head">Действие</p>
         <div class="body">
           <reset-filters :custom="true" />
           <reset-basket :custom="true" />
